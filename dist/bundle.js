@@ -97,6 +97,28 @@ eval("var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtim
 
 /***/ }),
 
+/***/ "./frontend/api.js":
+/*!*************************!*\
+  !*** ./frontend/api.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// import axios from 'axios';\n// // Build API\n// export const bitcoin = async () => {\n//   try {\n//     const response = await axios.get('https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd')\n//     console.log(response);\n//   } catch (error) {\n//     // handle error\n//     console.log(error);\n//   }\n// }\n// bitcoin(); \n// Testing AXIOS\n// export const test = async () => {\n//   try {\n//     const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1')\n//     console.log(response);  \n//   } catch (error) {\n//     console.log(error);\n//   }\n// }; \n// export const bitcoin = () => {\n//   axios.get('https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd')\n//     .then((response) => {\n//       console.log(response);\n//     })\n//     .catch((error) => {\n//       console.log(error);\n//     })\n//     .then(() => {\n//     });\n// }\n\n//# sourceURL=webpack:///./frontend/api.js?");
+
+/***/ }),
+
+/***/ "./frontend/controller.js":
+/*!********************************!*\
+  !*** ./frontend/controller.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("console.log('Controller works!');\n\n//# sourceURL=webpack:///./frontend/controller.js?");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./css/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./css/style.css ***!
@@ -176,17 +198,6 @@ eval("module.exports = function (module) {\n  if (!module.webpackPolyfill) {\n  
 
 /***/ }),
 
-/***/ "./src/api.js":
-/*!********************!*\
-  !*** ./src/api.js ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// import axios from 'axios';\n// // Build API\n// export const bitcoin = async () => {\n//   try {\n//     const response = await axios.get('https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd')\n//     console.log(response);\n//   } catch (error) {\n//     // handle error\n//     console.log(error);\n//   }\n// }\n// bitcoin(); \n// Testing AXIOS\n// export const test = async () => {\n//   try {\n//     const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1')\n//     console.log(response);  \n//   } catch (error) {\n//     console.log(error);\n//   }\n// }; \n// export const bitcoin = () => {\n//   axios.get('https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd')\n//     .then((response) => {\n//       console.log(response);\n//     })\n//     .catch((error) => {\n//       console.log(error);\n//     })\n//     .then(() => {\n//     });\n// }\n\n//# sourceURL=webpack:///./src/api.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -195,7 +206,7 @@ eval("// import axios from 'axios';\n// // Build API\n// export const bitcoin = 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.css */ \"./css/style.css\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_api__WEBPACK_IMPORTED_MODULE_2__);\n\n\n // const component = () => {\n//   const element = document.getElementsByClassName('root');\n//     // element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n//     // element.classList.add('title'); \n//     // element.classList.add('selections-wrapper');\n//     // element.classList.add('chart-wrapper');\n//     // element.classList.add('chart');\n//     // element.classList.add('crypto-table-wrapper');\n//     // element.classList.add('crypto-table');\n//     // element.classList.add('crypto-title');\n//   return element;\n// }\n// document.body.appendChild(component());\n// bitcoin()\n// abortController(); \n// cancelBitcoinToken();\n// cancelBitcoin();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.css */ \"./css/style.css\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _frontend_controller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../frontend/controller */ \"./frontend/controller.js\");\n/* harmony import */ var _frontend_controller__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_frontend_controller__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _frontend_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../frontend/api */ \"./frontend/api.js\");\n/* harmony import */ var _frontend_api__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_frontend_api__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n // const component = () => {\n//   const element = document.getElementsByClassName('root');\n//     // element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n//     // element.classList.add('title'); \n//     // element.classList.add('selections-wrapper');\n//     // element.classList.add('chart-wrapper');\n//     // element.classList.add('chart');\n//     // element.classList.add('crypto-table-wrapper');\n//     // element.classList.add('crypto-table');\n//     // element.classList.add('crypto-title');\n//   return element;\n// }\n// document.body.appendChild(component());\n// bitcoin()\n// abortController(); \n// cancelBitcoinToken();\n// cancelBitcoin();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

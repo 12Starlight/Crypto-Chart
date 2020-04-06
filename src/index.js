@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import '../css/style.css';
-import { test, bitcoin, cancelBitcoin, cancelBitcoinToken } from './api'; 
+import '../frontend/controller'
+import { test, bitcoin, cancelBitcoin, cancelBitcoinToken } from '../frontend/api'; 
 
 
 // const component = () => {
