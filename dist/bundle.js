@@ -86,14 +86,25 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
+/***/ "./css/style.css":
+/*!***********************!*\
+  !*** ./css/style.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n\nvar content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!./style.css */ \"./node_modules/css-loader/dist/cjs.js!./css/style.css\");\n\ncontent = content.__esModule ? content[\"default\"] : content;\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {};\noptions.insert = \"head\";\noptions.singleton = false;\nvar update = api(content, options);\nvar exported = content.locals ? content.locals : {};\nmodule.exports = exported;\n\n//# sourceURL=webpack:///./css/style.css?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./css/style.css":
 /*!*************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./css/style.css ***!
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".chart-wrapper {\\n  display: flex;\\n  flex-direction: column;\\n}\\n\\n.title {\\n  font-size: 40px;\\n  margin: 0 0 30px 0;\\n}\\n\\n.selections-wrapper {\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: space-evenly;\\n}\\n\\n.chart-wrapper {\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: center;\\n}\\n\\n.chart {\\n  height: 500px;\\n  width: 800px;\\n  border: solid 1px black;  \\n}\\n\\n.crypto-table-wrapper {\\n  display: flex;\\n  flex-direction: column;\\n}\\n\\n.crypto-title {\\n  font-size: 20px;\\n  margin: 0 0 20px 0; \\n}\\n\\n.crypto-table {\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: space-between;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".chart-wrapper {\\n  display: flex;\\n  flex-direction: column;\\n}\\n\\n.title {\\n  font-size: 40px;\\n  margin: 0 0 30px 0;\\n}\\n\\n.selections-wrapper {\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: space-evenly;\\n}\\n\\n.chart-wrapper {\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: center;\\n}\\n\\n.chart {\\n  height: 500px;\\n  width: 800px;\\n  border: solid 1px black;  \\n}\\n\\n.crypto-table-wrapper {\\n  display: flex;\\n  flex-direction: column;\\n}\\n\\n.crypto-title {\\n  font-size: 20px;\\n  margin: 0 0 20px 0; \\n}\\n\\n.crypto-table {\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: space-between;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./css/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -184,18 +195,7 @@ eval("// import axios from 'axios';\n// // Build API\n// export const bitcoin = 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_api__WEBPACK_IMPORTED_MODULE_2__);\n\n\n // const component = () => {\n//   const element = document.getElementsByClassName('root');\n//     // element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n//     // element.classList.add('title'); \n//     // element.classList.add('selections-wrapper');\n//     // element.classList.add('chart-wrapper');\n//     // element.classList.add('chart');\n//     // element.classList.add('crypto-table-wrapper');\n//     // element.classList.add('crypto-table');\n//     // element.classList.add('crypto-title');\n//   return element;\n// }\n// document.body.appendChild(component());\n// bitcoin()\n// abortController(); \n// cancelBitcoinToken();\n// cancelBitcoin();\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/style.css":
-/*!***********************!*\
-  !*** ./src/style.css ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n\nvar content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!./style.css */ \"./node_modules/css-loader/dist/cjs.js!./src/style.css\");\n\ncontent = content.__esModule ? content[\"default\"] : content;\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {};\noptions.insert = \"head\";\noptions.singleton = false;\nvar update = api(content, options);\nvar exported = content.locals ? content.locals : {};\nmodule.exports = exported;\n\n//# sourceURL=webpack:///./src/style.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.css */ \"./css/style.css\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_api__WEBPACK_IMPORTED_MODULE_2__);\n\n\n // const component = () => {\n//   const element = document.getElementsByClassName('root');\n//     // element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n//     // element.classList.add('title'); \n//     // element.classList.add('selections-wrapper');\n//     // element.classList.add('chart-wrapper');\n//     // element.classList.add('chart');\n//     // element.classList.add('crypto-table-wrapper');\n//     // element.classList.add('crypto-table');\n//     // element.classList.add('crypto-title');\n//   return element;\n// }\n// document.body.appendChild(component());\n// bitcoin()\n// abortController(); \n// cancelBitcoinToken();\n// cancelBitcoin();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
