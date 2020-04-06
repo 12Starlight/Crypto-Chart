@@ -13,6 +13,7 @@ const component = () => {
     element.classList.add('chart');
     element.classList.add('crypto-table-wrapper');
     element.classList.add('crypto-table');
+    element.classList.add('crypto-title');
 
   return element;
 }
