@@ -15,4 +15,4 @@ document.body.appendChild(component());
 // bitcoin()
 // abortController(); 
 // cancelBitcoinToken();
-cancelBitcoin();
+// cancelBitcoin();
