@@ -1,3 +1,8 @@
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .title {
   font-size: 40px;
   margin: 0 0 30px 0;
@@ -7,4 +12,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.chart {
+  height: 500px;
+  width: 800px;
+  border: solid 1px black;  
+}
+
+.crypto-table-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.crypto-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
