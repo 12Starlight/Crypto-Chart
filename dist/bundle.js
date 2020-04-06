@@ -115,7 +115,7 @@ eval("// import axios from 'axios';\n// // Build API\n// export const bitcoin = 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('Controller works!'); // Global Variables\n\nvar lineChart; // Event Listener\n\ndocument.getElementsByClassName('chart').onchange = console.log('changed');\n\n//# sourceURL=webpack:///./frontend/controller.js?");
+eval("console.log('Controller works!'); // Global Variables\n\nvar lineChart; // Helper Functions\n\nvar log = function log() {\n  console.log('changed');\n}; // Event Listener\n\n\ndocument.getElementsByClassName('chart').onchange = log();\n\n//# sourceURL=webpack:///./frontend/controller.js?");
 
 /***/ }),
 
