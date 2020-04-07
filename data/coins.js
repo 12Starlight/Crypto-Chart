@@ -1,4 +1,4 @@
-{
+export const data = {
     "bitcoin": [
         {
             "24h_vol": null,
@@ -49000,3 +49000,5 @@
         }
     ]
 }
+
+// export default data; 

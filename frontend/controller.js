@@ -1,4 +1,5 @@
 import * as d3 from 'd3'; 
+import { data } from '../data/coins';
 
 console.log('Controller works!')
 
@@ -19,3 +20,8 @@ const log = () => {
 // Event Listener
 document.getElementsByClassName('chart').onchange = log();
 
+
+// Retrieve Data
+// d3.json('../data/coins.json').then((data) => {
+  console.log(data);
+// })
