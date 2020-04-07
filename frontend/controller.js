@@ -6,10 +6,9 @@ console.log('Controller works!')
 
 // Global Variables
 let lineChart;
-const filteredData = {};
+export const filteredData = {};
 const parseTime = d3.timeParse('%d/%m/%Y');
 const formatTime = d3.timeFormat('%d/%m/%Y'); 
-const color = d3.scaleOrdinal(d3.schemeDark2); 
 
 // Helper Functions
 const log = () => {
@@ -19,7 +18,7 @@ const log = () => {
 }
 
 // Event Listener
-document.getElementsByClassName('chart').onchange = log();
+// document.getElementById('#chart').onchange = log();
 
 
 // Retrieve Data
@@ -47,4 +46,4 @@ for (let coin in data) {
 console.log(filteredData); 
 
 
-lineChart = new LineChart('chart');
+lineChart = new LineChart('#chart');

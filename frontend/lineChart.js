@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import { filteredData } from './controller'
 
 class LineChart {
   constructor(_parentElement) {
@@ -42,7 +43,7 @@ class LineChart {
       .attr('x', -170)
       .attr('font-size', '20px')
       .attr('text-anchor', 'middle')
-      .text('Price (USD)')
+      .text('Price (USD)');
 
     vis.x = d3.scaleTime().range([0, vis.width]);
     vis.y = d3.scaleLinear().range([vis.height, 0]);
@@ -64,14 +65,95 @@ class LineChart {
   wrangleData() {
     const vis = this;
 
+    vis.coin = document.getElementById('coin-selector').value
+    vis.yVariable = document.getElementById('perspective-selector').value
+
+    // Filter data based on selections
+    vis.dataFiltered = filteredData[vis.coin].filter((d) => {
+      return ((d.date))
+    })
+    
+    console.log(vis.coin);
+    console.log(vis.yVariable); 
     vis.updateVis();
   }
 
   updateVis() {
     const vis = this;
     
+    // Update scales
+    vis.x.domain(d3.extent(vis.dataFiltered, (d) => d.date));
+    vis.y.domain([d3.min(vis.dataFiltered, (d) => d[vis.yVariable]),
+    d3.max(vis.dataFiltered, (d) => d[vis.yVariable])]);
+
+
+    // Fix for y-axis format values
+    let formatYAxis = d3.format('.2s');
+    let formatAbbreviation = (x) => {
+      let s = formatYAxis(x);
+      switch (s[s.length - 1]) {
+        case 'G': return s.slice(0, -1) + 'B';
+        case 'k': return s.slice(0, -1) + 'K';
+      }
+
+      return s; 
+    }
+
+    // Update axis
+    vis.xAxisCall.scale(vis.x);
+    vis.xAxis.transition(vis.t()).call(vis.xAxisCall);
+    vis.yAxisCall.scale(vis.y);
+    vis.yAxis.transition(vis.t()).call(vis.yAxisCall.tickFormat(formatAbbreviation));
+
+    // Discard old tooltip elements
+    d3.select('.focus').remove(); 
+    d3.select('.overlay').remove();
+
+    const focus = vis.g.append('g')
+      .attr('class', 'focus')
+      .style('display', 'none');
+
+    focus.append('line')
+      .attr('class', 'x-hover-line hover-line')
+      .attr('y1', 0)
+      .attr('y2', vis.height);
+
+    focus.append('line')
+      .attr('class', 'y-hover-line hover-line')
+      .attr('x1', 0)
+      .attr('x2', vis.width);
+
+    focus.append('circle')
+      .attr('r', 4);
+
+    focus.append('text')
+      .attr('x', 15)
+      .attr('dy', '.31em');
+
+    vis.svg.append('rect')
+      .attr('transform', 'translate(' + vis.margin.left + ', ' + vis.margin.top + ')')
+      .attr('class', 'overlay')
+      .attr('width', vis.width)
+      .attr('height', vis.height);
+
+    // Update y-axis yLabel
+    let newLabel = (vis.yVariable === 'price_usd') ? 'Price (USD)' :
+      ((vis.yVariable === 'market_cap') ? 'Market Capitalization (USD)' :
+        '24 Hour Trading Volume (USD)')
+
+    vis.yLabel.text(newLabel)
     
-  }
+    let line = d3.line()
+      .x((d) => vis.x(d.date))
+      .y((d) => vis.y(d[vis.yVariable]));
+
+    const color = d3.scaleOrdinal(d3.schemeDark2); 
+
+    vis.g.select('.line')
+      .attr('stroke', color(vis.coin))
+      .transition(vis.t)  
+      .attr('d', line(0));
+  }; 
 }
 
 export default LineChart; 

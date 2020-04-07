@@ -20,11 +20,11 @@
   justify-content: center;
 }
 
-.chart {
+/* .chart {
   height: 500px;
   width: 800px;
   border: solid 1px black;  
-}
+} */
 
 .crypto-table-wrapper {
   display: flex;
