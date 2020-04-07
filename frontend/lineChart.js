@@ -87,7 +87,7 @@ class LineChart {
     d3.max(vis.dataFiltered, (d) => d[vis.yVariable])]);
 
 
-    // Fix for y-axis format values
+    // // Fix for y-axis format values
     let formatYAxis = d3.format('.2s');
     let formatAbbreviation = (x) => {
       let s = formatYAxis(x);
@@ -96,6 +96,7 @@ class LineChart {
         case 'k': return s.slice(0, -1) + 'K';
       }
 
+      console.log(s)
       return s; 
     }
 
@@ -134,7 +135,7 @@ class LineChart {
       .attr('transform', 'translate(' + vis.margin.left + ', ' + vis.margin.top + ')')
       .attr('class', 'overlay')
       .attr('width', vis.width)
-      .attr('height', vis.height);
+      .attr('height', vis.height)
 
     // Update y-axis yLabel
     let newLabel = (vis.yVariable === 'price_usd') ? 'Price (USD)' :
