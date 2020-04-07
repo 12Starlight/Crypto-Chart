@@ -153,7 +153,7 @@ class LineChart {
     vis.g.select('.line')
       .attr('stroke', color(vis.coin))
       .transition(vis.t)  
-      .attr('d', line(0));
+      .attr('d', line(vis.dataFiltered));
   }; 
 }
 
