@@ -1,5 +1,6 @@
 import * as d3 from 'd3'; 
 import { data } from '../data/coins';
+import LineChart from './lineChart';
 
 console.log('Controller works!')
 
@@ -41,7 +42,9 @@ for (let coin in data) {
     d['24h_vol'] = +d['24h_vol'];
     d.market_cap = +d.market_cap;
     d.date = parseTime(d.date)
-  });
-  
+  }); 
 }
 console.log(filteredData); 
+
+
+lineChart = new LineChart('chart');
