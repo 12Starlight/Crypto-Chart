@@ -23,5 +23,25 @@ document.getElementsByClassName('chart').onchange = log();
 
 // Retrieve Data
 // d3.json('../data/coins.json').then((data) => {
-  console.log(data);
 // })
+console.log(data);
+
+// Prepare and clean data
+for (let coin in data) {
+  if (!data.hasOwnProperty(coin)) {
+    continue;
+  }
+
+  filteredData[coin] = data[coin].filter((d) => {
+    return !(d.price_usd === null)
+  })
+
+  filteredData[coin].forEach((d) => {
+    d.price_usd = +d.price_usd;
+    d['24h_vol'] = +d['24h_vol'];
+    d.market_cap = +d.market_cap;
+    d.date = parseTime(d.date)
+  });
+  
+}
+console.log(filteredData); 
