@@ -6,7 +6,7 @@ console.log('Controller works!')
 
 // Global Variables
 let lineChart;
-export const filteredData = {};
+export  const filteredData = {};
 const parseTime = d3.timeParse('%d/%m/%Y');
 const formatTime = d3.timeFormat('%d/%m/%Y'); 
 
