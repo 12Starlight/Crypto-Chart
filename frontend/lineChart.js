@@ -17,7 +17,7 @@ class LineChart {
 
     vis.margin = { left: 80, right: 100, top: 30, bottom: 30 };
     vis.height = 350 - vis.margin.top - vis.margin.bottom;
-    vis.width = 100 - vis.margin.left - vis.margin.right; 
+    vis.width = 1650 - vis.margin.left - vis.margin.right; 
 
     vis.svg = d3.select(vis.parentElement)
       .append('svg')
@@ -29,7 +29,7 @@ class LineChart {
 
     vis.t = () => d3.transition().duration(1000);
 
-    vis.bisectDate = d3.bisector((d) => d.date).left; // .left returns the lowest position
+    vis.bisectDate = d3.bisectLeft((d) => d.date); // .left returns the lowest position
 
     vis.linePath = vis.g.append('path')
       .attr('class', 'line')
@@ -104,7 +104,7 @@ class LineChart {
     vis.xAxisCall.scale(vis.x);
     vis.xAxis.transition(vis.t()).call(vis.xAxisCall);
     vis.yAxisCall.scale(vis.y);
-    vis.yAxis.transition(vis.t()).call(vis.yAxisCall.tickFormat(formatAbbreviation));
+    vis.yAxis.transition(vis.t  ()).call(vis.yAxisCall.tickFormat(formatAbbreviation));
 
     // Discard old tooltip elements
     d3.select('.focus').remove(); 
@@ -127,15 +127,15 @@ class LineChart {
     focus.append('circle')
       .attr('r', 4);
 
-    focus.append('text')
+    focus.append('text') 
       .attr('x', 15)
       .attr('dy', '.31em');
 
-    vis.svg.append('rect')
-      .attr('transform', 'translate(' + vis.margin.left + ', ' + vis.margin.top + ')')
-      .attr('class', 'overlay')
-      .attr('width', vis.width)
-      .attr('height', vis.height)
+    // vis.svg.append('rect')
+    //   .attr('transform', 'translate(' + vis.margin.left + ', ' + vis.margin.top + ')')
+    //   .attr('class', 'overlay')
+    //   .attr('width', vis.width)
+    //   .attr('height', vis.height)
 
     // Update y-axis yLabel
     let newLabel = (vis.yVariable === 'price_usd') ? 'Price (USD)' :
@@ -147,7 +147,7 @@ class LineChart {
     let line = d3.line()
       .x((d) => vis.x(d.date))
       .y((d) => vis.y(d[vis.yVariable]));
-
+ 
     const color = d3.scaleOrdinal(d3.schemeDark2); 
 
     vis.g.select('.line')
