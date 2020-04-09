@@ -45,7 +45,7 @@ class LineChart {
       .attr('text-anchor', 'middle')
       .text('Price (USD)');
 
-    vis.x = d3.scaleTime().range([vis.width, 0]);
+    vis.x = d3.scaleTime().range([0, vis.width]);
     vis.y = d3.scaleLinear().range([vis.height, 0]);
 
     vis.yAxisCall = d3.axisLeft()
