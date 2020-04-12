@@ -12,7 +12,7 @@ class LineChart {
   }
 
 
-  initVis() { // Render Static Chart 
+  initVis() { // Render Static Chart f
     const vis = this; 
 
     vis.margin = { left: 80, right: 100, top: 30, bottom: 30 };
@@ -24,24 +24,24 @@ class LineChart {
       .attr('width', vis.width + vis.margin.left + vis.margin.right)
       .attr('height', vis.height + vis.margin.top + vis.margin.bottom);
 
-    vis.g = vis.svg.append('g')
+    vis.g = vis.svg.append ('g')
       .attr('transform', 'translate(' + vis.margin.left + ', ' + vis.margin.top + ')');
-
+ 
     vis.t = () => d3.transition().duration(1000);
 
     vis.bisectDate = d3.bisectLeft((d) => d.date); // .left returns the lowest position
 
     vis.linePath = vis.g.append('path')
       .attr('class', 'line')
-      .attr('fill', 'none')
-      .attr('stroke-width', '3px');
-
+      .attr('fill', 'none') 
+      .attr('stroke-width', '3px'); 
+ 
     vis.yLabel = vis.g.append('text')
       .attr('class', 'y axisLabel')
       .attr('transform', 'rotate(-90)')
       .attr('y', -60)
       .attr('x', -170)
-      .attr('font-size', '20px')
+      .attr('font-size', '20px')    
       .attr('text-anchor', 'middle')
       .text('Price (USD)');
 
@@ -55,7 +55,7 @@ class LineChart {
     vis.xAxis = vis.g.append('g')
       .attr('class', 'x axis')
       .attr('transform', 'translate(0, ' + vis.height + ')');
-
+ 
     vis.yAxis = vis.g.append('g')
       .attr('class', 'y axis');
 
