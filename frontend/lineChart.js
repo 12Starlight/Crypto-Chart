@@ -127,7 +127,7 @@ class LineChart {
       .attr('x2', vis.width); 
 
     focus.append('circle')
-      .attr('r', 5);
+      .attr('r', 4);
 
     focus.append('text') 
       .attr('x', 15)
@@ -140,7 +140,7 @@ class LineChart {
       .attr('height', vis.height)
       .onmouseover = () => focus.style('display', null)
       .onmouseout = () => focus.style('display', "none")
-      .onmousemove = mousemove(); 
+      .onmousemove = () => mousemove(); 
 
     function mousemove() {
       let x0 = vis.x.invert(d3.mouse(this)[0]),
@@ -152,8 +152,8 @@ class LineChart {
       focus.select("text").text(() => d3.format("$,")(d[vis.yVariable].toFixed(2)));
       focus.select(".x-hover-line").attr("y2", vis.height - vis.y(d[vis.yVariable]));
       focus.select(".y-hover-line").attr("x2", -vis.x(d.date));
-      debugger;
     }
+    debugger; 
 
     // Update y-axis yLabel
     let newLabel = (vis.yVariable === 'price_usd') ? 'Price (USD)' :
