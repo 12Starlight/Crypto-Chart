@@ -24,7 +24,7 @@ class LineChart {
       .attr('width', vis.width + vis.margin.left + vis.margin.right)
       .attr('height', vis.height + vis.margin.top + vis.margin.bottom);
 
-    vis.g = vis.svg.append ('g')
+    vis.g = vis.svg.append('g')
       .attr('transform', 'translate(' + vis.margin.left + ', ' + vis.margin.top + ')');
  
     vis.t = () => d3.transition().duration(1000);
@@ -122,7 +122,7 @@ class LineChart {
     focus.append('line')
       .attr('class', 'y-hover-line hover-line')
       .attr('x1', 0)
-      .attr('x2', vis.width);
+      .attr('x2', vis.width); 
 
     focus.append('circle')
       .attr('r', 4);
@@ -138,20 +138,20 @@ class LineChart {
     //   .attr('height', vis.height)
     //   .on("mouseover", () => focus.style("display", null))
     //   .on("mouseout", () => focus.style("display", "none"))
-    //   .on("mousemove", mousemove);
+    //   .on("mousemove", mousemove); 
 
-    function mousemove() {
-      let x0 = vis.x.invert(d3.mouse(this)[0]),
-        i = vis.bisectDate(vis.dataFiltered, x0, 1),
-        d0 = vis.dataFiltered[i - 1],
-        d1 = vis.dataFiltered[i],
-        d = (d1 && d0) ? (x0 - d0.date > d1.date - x0 ? d1 : d0) : 0;
-      focus.attr("transform", "translate(" + vis.x(d.date) + "," + vis.y(d[vis.yVariable]) + ")");
-      focus.select("text").text(() => d3.format("$,")(d[vis.yVariable].toFixed(2)));
-      focus.select(".x-hover-line").attr("y2", vis.height - vis.y(d[vis.yVariable]));
-      focus.select(".y-hover-line").attr("x2", -vis.x(d.date));
-      debugger;
-    }
+    // function mousemove() {
+    //   let x0 = vis.x.invert(d3.mouse(this)[0]),
+    //     i = vis.bisectDate(vis.dataFiltered, x0, 1),
+    //     d0 = vis.dataFiltered[i - 1],
+    //     d1 = vis.dataFiltered[i],
+    //     d = (d1 && d0) ? (x0 - d0.date > d1.date - x0 ? d1 : d0) : 0;
+    //   focus.attr("transform", "translate(" + vis.x(d.date) + "," + vis.y(d[vis.yVariable]) + ")");
+    //   focus.select("text").text(() => d3.format("$,")(d[vis.yVariable].toFixed(2)));
+    //   focus.select(".x-hover-line").attr("y2", vis.height - vis.y(d[vis.yVariable]));
+    //   focus.select(".y-hover-line").attr("x2", -vis.x(d.date));
+    //   debugger;
+    // }
 
     // Update y-axis yLabel
     let newLabel = (vis.yVariable === 'price_usd') ? 'Price (USD)' :

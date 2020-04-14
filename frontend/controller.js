@@ -5,7 +5,7 @@ import LineChart from './lineChart';
 console.log('Controller works!')
 
 // Global Variables
-let lineChart;
+let lineChart = new LineChart('#chart');
 export  const filteredData = {};
 const parseTime = d3.timeParse('%d/%m/%Y');
 const formatTime = d3.timeFormat('%d/%m/%Y'); 
@@ -17,14 +17,23 @@ const log = () => {
   console.log(formatTime(100004050)); // Always a number
 }
 
+const coinChanged = () => {
+  lineChart.wrangleData();
+}
+
 // Event Listener
-// document.getElementById('#chart').onchange = log();
+document.getElementById('#coin-slector').onchange = coinChanged();
+
+document.getElementById('#perspective-selector').onchange = lineChart.wrangleData(); 
 
 
 // Retrieve Data
 // d3.json('../data/coins.json').then((data) => {
 // })
 console.log(data);
+
+
+
 
 // Prepare and clean data
 for (let coin in data) {
@@ -46,4 +55,3 @@ for (let coin in data) {
 console.log(filteredData); 
 
 
-lineChart = new LineChart('#chart');
