@@ -30,7 +30,8 @@ class LineChart {
  
     vis.t = () => d3.transition().duration(1000);
 
-    vis.bisectDate = d3.bisectLeft((d) => d.date); // .left returns the lowest position
+    vis.bisectDate = d3.bisector((d) => d.date).left; // .left returns the lowest position
+    debugger; 
 
     vis.linePath = vis.g.append('path')
       .attr('class', 'line')
@@ -138,9 +139,9 @@ class LineChart {
       .attr('class', 'overlay')
       .attr('width', vis.width)
       .attr('height', vis.height)
-      .onmouseover = () => focus.style('display', null)
-      .onmouseout = () => focus.style('display', "none")
-      .onmousemove = () => mousemove(); 
+      .on("mouseover", () => focus.style("display", null))
+      .on("mouseout", () => focus.style("display", "none"))
+      .on("mousemove", mousemove);
 
     function mousemove() {
       let x0 = vis.x.invert(d3.mouse(this)[0]),
