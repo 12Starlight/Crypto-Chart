@@ -109,11 +109,11 @@
 .focus circle {
   fill: #F1F3F3;
   stroke: #777;
-  stroke-width: 3px;
+  stroke-width: 1.5px;
 }
   
 .hover-line {
   stroke: #777;
-  stroke-width: 2px;
+  stroke-width: 1px;
   stroke-dasharray: 3,3;
 }

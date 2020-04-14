@@ -128,7 +128,7 @@ class LineChart {
       .attr('x2', vis.width); 
 
     focus.append('circle')
-      .attr('r', 4);
+      .attr('r', 3);
 
     focus.append('text') 
       .attr('x', 15)
