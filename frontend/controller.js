@@ -20,14 +20,18 @@ const log = () => {
 }
 
 const coinChanged = () => {
-  // lineChart.wrangleData();
+  lineChart.wrangleData();  
 }
 
 // // Event Listener
-document.getElementById('coin-selector').onchange = coinChanged();
+document.getElementById('coin-selector').onchange = () => {
+  coinChanged(); 
+  // console.log('coin changed');
+}
 
-// document.getElementById('perspective-selector').onchange = lineChart.wrangleData(); 
-
+document.getElementById('perspective-selector').onchange = () => {
+  lineChart.wrangleData(); 
+}
 
 // Retrieve Data
 // d3.json('../data/coins.json').then((data) => {

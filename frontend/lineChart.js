@@ -31,7 +31,7 @@ class LineChart {
     vis.t = () => d3.transition().duration(1000);
 
     vis.bisectDate = d3.bisector((d) => d.date).left; // .left returns the lowest position
-    debugger; 
+    // debugger; 
 
     vis.linePath = vis.g.append('path')
       .attr('class', 'line')
@@ -74,7 +74,7 @@ class LineChart {
     vis.dataFiltered = filteredData[vis.coin].filter((d) => {
       return d.date; 
     });
-    debugger; 
+    // debugger; 
 
     console.log(vis.coin);
     console.log(vis.yVariable); 
@@ -154,7 +154,7 @@ class LineChart {
       focus.select(".x-hover-line").attr("y2", vis.height - vis.y(d[vis.yVariable]));
       focus.select(".y-hover-line").attr("x2", -vis.x(d.date));
     }
-    debugger; 
+    // debugger; 
 
     // Update y-axis yLabel
     let newLabel = (vis.yVariable === 'price_usd') ? 'Price (USD)' :
