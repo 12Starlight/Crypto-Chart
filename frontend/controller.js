@@ -10,6 +10,7 @@ let lineChart;
 export const filteredData = {};
 const parseTime = d3.timeParse('%d/%m/%Y');
 const formatTime = d3.timeFormat('%d/%m/%Y'); 
+export const color = d3.scaleOrdinal(d3.schemeDark2); 
 
 // Helper Functions
 const log = () => {
@@ -19,11 +20,11 @@ const log = () => {
 }
 
 const coinChanged = () => {
-  lineChart.wrangleData();
+  // lineChart.wrangleData();
 }
 
 // // Event Listener
-// document.getElementById('coin-slector').onchange = coinChanged();
+document.getElementById('coin-selector').onchange = coinChanged();
 
 // document.getElementById('perspective-selector').onchange = lineChart.wrangleData(); 
 

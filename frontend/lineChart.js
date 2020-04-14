@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { filteredData } from './controller.js'; 
+import { filteredData, color } from './controller.js'; 
 
 
 class LineChart {
@@ -165,8 +165,6 @@ class LineChart {
     let line = d3.line()
       .x((d) => vis.x(d.date))
       .y((d) => vis.y(d[vis.yVariable]));
- 
-    const color = d3.scaleOrdinal(d3.schemeDark2); 
 
     vis.g.select('.line')
       .attr('stroke', color(vis.coin))
