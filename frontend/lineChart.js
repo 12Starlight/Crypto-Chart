@@ -42,7 +42,7 @@ class LineChart {
       .attr('class', 'y axisLabel')
       .attr('transform', 'rotate(-90)')
       .attr('y', -60)
-      .attr('x', -170)
+      .attr('x', -140)
       .attr('font-size', '20px')    
       .attr('text-anchor', 'middle')
       .text('Price (USD)');
