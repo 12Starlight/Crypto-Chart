@@ -67,6 +67,7 @@ class LineChart {
 
     vis.coin = document.getElementById('coin-selector').value
     vis.yVariable = document.getElementById('perspective-selector').value
+    debugger; 
 
     // Filter data based on selections
     vis.dataFiltered = filteredData[vis.coin].filter((d) => {
@@ -104,7 +105,7 @@ class LineChart {
     vis.xAxisCall.scale(vis.x);
     vis.xAxis.transition(vis.t()).call(vis.xAxisCall);
     vis.yAxisCall.scale(vis.y);
-    vis.yAxis.transition(vis.t  ()).call(vis.yAxisCall.tickFormat(formatAbbreviation));
+    vis.yAxis.transition(vis.t()).call(vis.yAxisCall.tickFormat(formatAbbreviation));
 
     // Discard old tooltip elements
     d3.select('.focus').remove(); 

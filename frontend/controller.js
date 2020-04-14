@@ -21,10 +21,10 @@ const coinChanged = () => {
   lineChart.wrangleData();
 }
 
-// Event Listener
-document.getElementById('#coin-slector').onchange = coinChanged();
+// // Event Listener
+// document.getElementById('coin-slector').onchange = coinChanged();
 
-document.getElementById('#perspective-selector').onchange = lineChart.wrangleData(); 
+// document.getElementById('perspective-selector').onchange = lineChart.wrangleData(); 
 
 
 // Retrieve Data
