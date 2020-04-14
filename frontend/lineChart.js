@@ -1,5 +1,4 @@
 import * as d3 from 'd3';
-import { filteredData } from './controller'
 
 class LineChart {
   constructor(_parentElement) {
@@ -67,13 +66,12 @@ class LineChart {
 
     vis.coin = document.getElementById('coin-selector').value
     vis.yVariable = document.getElementById('perspective-selector').value
+
+    // Filter data based on selections'
+    const filteredData = {};
+    vis.dataFiltered = filteredData[vis.coin];
     debugger; 
 
-    // Filter data based on selections
-    vis.dataFiltered = filteredData[vis.coin].filter((d) => {
-      return ((d.date))
-    })
-    
     console.log(vis.coin);
     console.log(vis.yVariable); 
     vis.updateVis();
