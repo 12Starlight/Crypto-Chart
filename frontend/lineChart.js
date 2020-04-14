@@ -18,7 +18,7 @@ class LineChart {
 
     vis.margin = { left: 80, right: 100, top: 30, bottom: 30 };
     vis.height = 350 - vis.margin.top - vis.margin.bottom;
-    vis.width = 1650 - vis.margin.left - vis.margin.right; 
+    vis.width = 1370 - vis.margin.left - vis.margin.right; 
 
     vis.svg = d3.select(vis.parentElement)
       .append('svg')
