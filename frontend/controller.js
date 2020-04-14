@@ -5,8 +5,9 @@ import LineChart from './lineChart';
 console.log('Controller works!')
 
 // Global Variables
-let lineChart = new LineChart('#chart');
-debugger; 
+let lineChart; 
+// debugger; 
+export const filteredData = {};
 const parseTime = d3.timeParse('%d/%m/%Y');
 const formatTime = d3.timeFormat('%d/%m/%Y'); 
 
@@ -33,8 +34,6 @@ const coinChanged = () => {
 console.log(data);
 
 
-
-
 // Prepare and clean data
 for (let coin in data) {
   if (!data.hasOwnProperty(coin)) {
@@ -55,3 +54,4 @@ for (let coin in data) {
 console.log(filteredData); 
 
 
+lineChart = new LineChart('#chart');
