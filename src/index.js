@@ -22,7 +22,8 @@ import { test, bitcoin, cancelBitcoin, cancelBitcoinToken } from '../frontend/ap
 
 // document.body.appendChild(component());
 
-// bitcoin()
+bitcoin();
+test(); 
 // abortController(); 
 // cancelBitcoinToken();
 // cancelBitcoin();
