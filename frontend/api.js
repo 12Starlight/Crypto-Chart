@@ -88,6 +88,34 @@ stream.on('error', () => {
 });
 
 
+stream.on('data', (response) => {
+  let chunk = response.toString();
+  let cleanedChunk = chunk.replace(/data: /g, '');
+
+  if (partialMessage) {
+    cleanedChunk = partialMessage + cleanedChunk;
+    partialMessage = '';
+  }
+
+  let chunkArray = cleanedChunk.split('\r\n\r\n');
+
+  chunkArray.forEach((message) => {
+    if (message) {
+      try {
+        let quote = JSON.parse(message)[0];
+        console.log(quote);
+      } catch (error) {
+        partialMessage = message;
+      }
+    }
+  });
+});
+
+const wait = () {
+  setTimeout(wait, 1000);
+};
+wait(); 
+
 
 
 
