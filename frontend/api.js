@@ -78,7 +78,7 @@ stream.on('end', () => {
   connect();
 });
 
-stream.on('complete', () => {
+stream.on('complete', () => {      
   console.log('Reconnecting');
 });
 
