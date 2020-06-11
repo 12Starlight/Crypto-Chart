@@ -1,120 +1,120 @@
-import axios from 'axios';
+// import axios from 'axios';
 
 
-// // Build API
-// export const bitcoin = async () => {
-//   try {
-//     const response = await axios.get('https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd')
-//     console.log(response);
-//   } catch (error) {
-//     // handle error
-//     console.log(error);
-//   }
-// }
+// // // Build API
+// // export const bitcoin = async () => {
+// //   try {
+// //     const response = await axios.get('https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd')
+// //     console.log(response);
+// //   } catch (error) {
+// //     // handle error
+// //     console.log(error);
+// //   }
+// // }
 
-// bitcoin(); 
-
-
-// Testing AXIOS
-// export const test = async () => {
-//   try {
-//     const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
-//     console.log(response);  
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }; 
-export const test = () => {
-  return console.log('test'); 
-}
+// // bitcoin(); 
 
 
-// const config = {
-//   headers: {
-//     'Content-Type': 'text/event-stream'
-//   }
-// }
-
-// export const bitcoin = () => {
-//   debugger; 
-//   axios.get(
-//     'https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd',
-//     config
-//     )
-//     .then((response) => {
-//       console.log(response);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     })
-//     .then(() => {
-
-//     });
+// // Testing AXIOS
+// // export const test = async () => {
+// //   try {
+// //     const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+// //     console.log(response);  
+// //   } catch (error) {
+// //     console.log(error);
+// //   }
+// // }; 
+// export const test = () => {
+//   return console.log('test'); 
 // }
 
 
-// Node.js SSE Client
-const request = require('request');
+// // const config = {
+// //   headers: {
+// //     'Content-Type': 'text/event-stream'
+// //   }
+// // }
 
-let stream;
-let partialMessage;
+// // export const bitcoin = () => {
+// //   debugger; 
+// //   axios.get(
+// //     'https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd',
+// //     config
+// //     )
+// //     .then((response) => {
+// //       console.log(response);
+// //     })
+// //     .catch((error) => {
+// //       console.log(error);
+// //     })
+// //     .then(() => {
 
-const connect = () {
-  stream = request({
-    url: 'https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd',
-    headers: {
-      'Content-Type': 'text/event-stream'
-    }
-  })
-}
-connect(); 
-
-stream.on('socket', () => {
-  console.log('Connected');
-});
-
-stream.on('end', () => {
-  console.log('Reconnecting');
-  connect();
-});
-
-stream.on('complete', () => {      
-  console.log('Reconnecting');
-});
-
-stream.on('error', () => {
-  console.log('Error', err);
-  connect();
-});
+// //     });
+// // }
 
 
-stream.on('data', (response) => {
-  let chunk = response.toString();
-  let cleanedChunk = chunk.replace(/data: /g, '');
+// // Node.js SSE Client
+// const request = require('request');
 
-  if (partialMessage) {
-    cleanedChunk = partialMessage + cleanedChunk;
-    partialMessage = '';
-  }
+// let stream;
+// let partialMessage;
 
-  let chunkArray = cleanedChunk.split('\r\n\r\n');
+// const connect = () {
+//   stream = request({
+//     url: 'https://cloud-sse.iexapis.com/stable/cryptoQuotes?symbols=BTCUSDT&token=pk_9dbe2686af9e4869b46f1ff7fb1b54dd',
+//     headers: {
+//       'Content-Type': 'text/event-stream'
+//     }
+//   })
+// }
+// connect(); 
 
-  chunkArray.forEach((message) => {
-    if (message) {
-      try {
-        let quote = JSON.parse(message)[0];
-        console.log(quote);
-      } catch (error) {
-        partialMessage = message;
-      }
-    }
-  });
-});
+// stream.on('socket', () => {
+//   console.log('Connected');
+// });
 
-const wait = () {
-  setTimeout(wait, 1000);
-};
-wait(); 
+// stream.on('end', () => {
+//   console.log('Reconnecting');
+//   connect();
+// });
+
+// stream.on('complete', () => {      
+//   console.log('Reconnecting');
+// });
+
+// stream.on('error', () => {
+//   console.log('Error', err);
+//   connect();
+// });
+
+
+// stream.on('data', (response) => {
+//   let chunk = response.toString();
+//   let cleanedChunk = chunk.replace(/data: /g, '');
+
+//   if (partialMessage) {
+//     cleanedChunk = partialMessage + cleanedChunk;
+//     partialMessage = '';
+//   }
+
+//   let chunkArray = cleanedChunk.split('\r\n\r\n');
+
+//   chunkArray.forEach((message) => {
+//     if (message) {
+//       try {
+//         let quote = JSON.parse(message)[0];
+//         console.log(quote);
+//       } catch (error) {
+//         partialMessage = message;
+//       }
+//     }
+//   });
+// });
+
+// const wait = () {
+//   setTimeout(wait, 1000);
+// };
+// wait(); 
 
 
 
