@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import '../css/style.css';
 import '../frontend/controller';
 
 import { test, bitcoin, cancelBitcoin, cancelBitcoinToken } from '../frontend/api'; 
